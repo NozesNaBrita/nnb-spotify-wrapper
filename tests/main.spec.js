@@ -15,6 +15,18 @@ sinonStubPromise(sinon)
 global.fetch = require('node-fetch')
 
 describe('Spotify Wrapper', () => {
+  let fetchedStub
+  let promise
+
+  beforeEach(() => {
+    fetchedStub = sinon.stub(global, 'fetch');
+    promise = fetchedStub.returnsPromise();
+  })
+
+  afterEach(() => {
+    fetchedStub.restore();
+  })
+
   describe('Smoke tests',() => {
     it('should exist search method', () => {
       expect(search).to.exist;
@@ -34,18 +46,6 @@ describe('Spotify Wrapper', () => {
   })
 
   describe('Generic Search', () => {
-    let fetchedStub
-    let promise
-
-    beforeEach(() => {
-      fetchedStub = sinon.stub(global, 'fetch');
-      promise = fetchedStub.returnsPromise();
-    })
-
-    afterEach(() => {
-      fetchedStub.restore();
-    })
-
     it('should call fetch function', () => {
       const artists = search()
 
@@ -80,6 +80,66 @@ describe('Spotify Wrapper', () => {
       const artists = search('Incubus', 'artist')
 
       expect(artists.resolveValue).to.be.eql({ body: 'json' })
+    })
+  })
+
+  describe('searchArtist', () => {
+    it('should call fetch function', () => {
+      const artists = searchArtists('Djavan')
+      expect(fetchedStub).to.have.been.calledOnce
+    })
+
+    it('should receive the correct url to fetch', () => {
+      const artists = searchArtists('Gonzaguinha')
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Gonzaguinha&type=artist')
+
+      const artists2 = searchArtists('Céu')
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Céu&type=artist')
+    })
+  })
+
+  describe('searchAlbums', () => {
+    it('should call fetch function', () => {
+      const albums = searchAlbums('Djavan')
+      expect(fetchedStub).to.have.been.calledOnce
+    })
+
+    it('should receive the correct url to fetch', () => {
+      const albums = searchAlbums('Gonzaguinha')
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Gonzaguinha&type=album')
+
+      const albums2 = searchAlbums('Céu')
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Céu&type=album')
+    })
+  })
+
+  describe('searchTracks', () => {
+    it('should call fetch function', () => {
+      const tracks = searchTracks('Djavan')
+      expect(fetchedStub).to.have.been.calledOnce
+    })
+
+    it('should receive the correct url to fetch', () => {
+      const tracks = searchTracks('Gonzaguinha')
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Gonzaguinha&type=track')
+
+      const tracks2 = searchTracks('Céu')
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Céu&type=track')
+    })
+  })
+
+  describe('searchPlaylists', () => {
+    it('should call fetch function', () => {
+      const playlists = searchPlaylists('Djavan')
+      expect(fetchedStub).to.have.been.calledOnce
+    })
+
+    it('should receive the correct url to fetch', () => {
+      const playlists = searchPlaylists('Gonzaguinha')
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Gonzaguinha&type=playlist')
+
+      const playlists2 = searchPlaylists('Céu')
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Céu&type=playlist')
     })
   })
 })
