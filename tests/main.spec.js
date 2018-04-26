@@ -79,7 +79,7 @@ describe('Spotify Wrapper', () => {
 
       const artists = search('Incubus', 'artist')
 
-      expect(artists.resolveValue).to.be.eql({ body: 'json' })
+      expect(artists.resolveValue).to.eql({ body: 'json' })
     })
   })
 
