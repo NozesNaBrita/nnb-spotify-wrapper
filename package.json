@@ -8,6 +8,7 @@
     "build": "npm run clear && babel --out-dir lib src",
     "build:watch": "npm run build -- --watch",
     "lint": "eslint src/*.js",
+    "lint:fix": "eslint --fix src/*.js",
     "prepush": "npm run lint",
     "test": "mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "mocha tests/**/*.spec.js --require babel-register --watch",
@@ -53,5 +54,8 @@
     "sinon": "^4.5.0",
     "sinon-chai": "^3.0.0",
     "sinon-stub-promise": "^4.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1"
   }
 }
