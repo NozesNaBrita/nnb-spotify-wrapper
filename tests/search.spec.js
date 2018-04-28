@@ -8,7 +8,7 @@ import { search,
   searchArtists,
   searchTracks,
   searchPlaylists,
-} from '../src/main'
+} from '../src/search'
 
 chai.use(sinonChai)
 sinonStubPromise(sinon)
