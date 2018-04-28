@@ -27,6 +27,10 @@ describe('Album', () => {
       expect(getAlbum).to.exist;
     })
 
+    it('should exist getAlbums method', () => {
+      expect(getAlbums).to.exist;
+    })
+
     it('should exist getAlbumTracks method', () => {
       expect(getAlbumTracks).to.exist;
     })
