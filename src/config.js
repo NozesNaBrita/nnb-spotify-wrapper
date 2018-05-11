@@ -6,4 +6,3 @@ export const HEADERS = {
     Authorization: `'Bearer ${process.env.API_TOKEN}'`,
   },
 };
-
