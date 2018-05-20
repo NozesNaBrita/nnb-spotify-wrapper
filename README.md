@@ -1,8 +1,9 @@
+[![Build Status](https://travis-ci.org/NozesNaBrita/nnb-spotify-wrapper.svg?branch=master)](https://travis-ci.org/NozesNaBrita/nnb-spotify-wrapper)
+[![Coverage Status](https://coveralls.io/repos/github/NozesNaBrita/nnb-spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/NozesNaBrita/nnb-spotify-wrapper?branch=master)
+
 # Nozes na Brita Spotify Wrapper
 
 Just another [spotify wrapper]((https://developer.spotify.com/web-api/)).
-
-
 
 ## Browser Support
 
