@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>NNB Spotify Wrapper test</title>
+  </head>
+  <body>
+
+    <div id="albums">
+
+    </div>
+    <script src="../dist/nnbSpotifyWrapper.umd.min.js"></script>
+    <script>
+      const albums = nnbSpotifyWrapper.searchAlbums('Parangolé')
+      const albumsEl = document.getElementById('albums')
+      albums
+        .then(data => {
+          let markup = data.albums.items.map(item =>
+            `<img src='${item.images[0].url}' alt='${item.name}' />`
+          ).join('')
+
+          albumsEl.innerHTML = markup
+        })
+    </script>
+  </body>
+</html>
