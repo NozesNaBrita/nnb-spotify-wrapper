@@ -1,3 +1,11 @@
+<a name="0.9.3"></a>
+## <small>0.9.3 (2018-06-17)</small>
+
+* Release 0.9.2 ([f89a9ed](https://github.com/NozesNaBrita/nnb-spotify-wrapper/commit/f89a9ed))
+* Set bumped to explicitly push to origin ([6d1bed9](https://github.com/NozesNaBrita/nnb-spotify-wrapper/commit/6d1bed9))
+
+
+
 <a name="0.9.2"></a>
 ## <small>0.9.2 (2018-06-17)</small>
 
