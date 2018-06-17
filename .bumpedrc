@@ -15,7 +15,7 @@ plugins:
       command: 'git-dirty && npm test'
     Publishing tag to GitHub:
       plugin: bumped-terminal
-      command: 'git tag $newVersion && git push && git push --tags'
+      command: 'git tag $newVersion && git push origin master && git push --tags origin master'
     Publishing to NPM:
       plugin: bumped-terminal
       command: npm publish
