@@ -2,7 +2,7 @@
   "name": "nnb-spotify-wrapper",
   "description": "Nozes na Brita spotify wrapper.",
   "homepage": "https://github.com/NozesNaBrita/nnb-spotify-wrapper#readme",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "main": "lib/index.js",
   "author": {
     "email": "mauricio@mauriciovieira.net",
