@@ -1,67 +1,75 @@
 {
   "name": "nnb-spotify-wrapper",
-  "version": "1.0.0",
   "description": "Nozes na Brita spotify wrapper.",
-  "main": "src/index.js",
+  "homepage": "https://github.com/NozesNaBrita/nnb-spotify-wrapper#readme",
+  "version": "0.9.0",
+  "main": "lib/index.js",
+  "author": {
+    "email": "mauricio@mauriciovieira.net",
+    "name": "Mauricio Vieira",
+    "url": "https://mauriciovieira.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NozesNaBrita/nnb-spotify-wrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NozesNaBrita/nnb-spotify-wrapper/issues"
+  },
+  "keywords": [
+    "js",
+    "library",
+    "tdd"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.6.1",
+    "babel-register": "6.26.0",
+    "chai": "4.1.2",
+    "coveralls": "3.0.1",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.11.0",
+    "husky": "0.14.3",
+    "mocha": "5.1.1",
+    "node-fetch": "2.1.2",
+    "nyc": "13.0.0",
+    "rimraf": "2.6.2",
+    "sinon": "4.5.0",
+    "sinon-chai": "3.0.0",
+    "sinon-stub-promise": "4.0.0",
+    "webpack": "4.8.2",
+    "webpack-cli": "3.0.8"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "scripts": {
     "build": "npm run clean && babel --out-dir lib src",
-    "build:watch": "npm run build -- --watch",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "build:umd": "webpack --output-filename nnbSpotifyWrapper.umd.js",
     "build:umd:min": "webpack --output-filename nnbSpotifyWrapper.umd.min.js -p",
-    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
+    "build:watch": "npm run build -- --watch",
     "clean": "rimraf lib",
     "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint src/*.js",
     "lint:fix": "eslint --fix src/*.js",
     "prepush": "npm run lint",
     "test": "mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "mocha tests/**/*.spec.js --require babel-register --watch",
-    "test:coverage": "nyc npm test"
+    "test:coverage": "nyc npm test",
+    "test:tdd": "mocha tests/**/*.spec.js --require babel-register --watch"
   },
+  "license": "MIT",
   "nyc": {
-    "reporter": [
-      "text",
-      "html"
-    ],
     "exclude": [
       "tests/**"
+    ],
+    "reporter": [
+      "html",
+      "text"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NozesNaBrita/nnb-spotify-wrapper.git"
-  },
-  "keywords": [
-    "js",
-    "tdd",
-    "library"
-  ],
-  "author": "Mauricio Vieira <mauricio@mauriciovieira.net> (http://mauriciovieira.net/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/NozesNaBrita/nnb-spotify-wrapper/issues"
-  },
-  "homepage": "https://github.com/NozesNaBrita/nnb-spotify-wrapper#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
-    "coveralls": "^3.0.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "husky": "^0.14.3",
-    "mocha": "^5.1.1",
-    "node-fetch": "^2.1.2",
-    "nyc": "^11.7.1",
-    "rimraf": "^2.6.2",
-    "sinon": "^4.5.0",
-    "sinon-chai": "^3.0.0",
-    "sinon-stub-promise": "^4.0.0",
-    "webpack": "^4.8.2",
-    "webpack-cli": "^2.1.3"
-  },
-  "dependencies": {}
+  }
 }
