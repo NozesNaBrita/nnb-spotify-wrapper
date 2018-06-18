@@ -1,3 +1,5 @@
+/* global fetch */
+
 import {
   search,
   searchArtists,
@@ -17,5 +19,14 @@ export default class SpotifyWrapper {
   constructor(options) {
     this.apiURL = options.apiURL || API_URL;
     this.apiToken = options.apiToken;
+  }
+
+  request(url) {
+    const headers = {
+      headers: {
+        Authorization: `Bearer ${this.apiToken}`,
+      },
+    };
+    return fetch(url, headers);
   }
 }
