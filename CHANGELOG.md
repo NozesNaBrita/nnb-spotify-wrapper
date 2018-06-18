@@ -1,3 +1,13 @@
+<a name="1.0.0"></a>
+## 1.0.0 (2018-06-18)
+
+* Add request method ([f0f16a8](https://github.com/NozesNaBrita/nnb-spotify-wrapper/commit/f0f16a8))
+* Add SpotifyWrapper class ([121e721](https://github.com/NozesNaBrita/nnb-spotify-wrapper/commit/121e721))
+* Refactor albums to be part of SpotifyWrapper ([5cfc9e3](https://github.com/NozesNaBrita/nnb-spotify-wrapper/commit/5cfc9e3))
+* Refactor search to be part of SpotifyWrapper ([f1979ab](https://github.com/NozesNaBrita/nnb-spotify-wrapper/commit/f1979ab))
+
+
+
 <a name="0.9.3"></a>
 ## <small>0.9.3 (2018-06-17)</small>
 
