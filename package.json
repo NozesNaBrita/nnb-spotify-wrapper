@@ -23,10 +23,11 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-loader": "7.1.4",
-    "babel-preset-env": "1.6.1",
-    "babel-register": "6.26.0",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/register": "^7.10.1",
+    "braces": ">=2.3.1",
     "chai": "4.1.2",
     "coveralls": "^3.1.0",
     "eslint": "4.19.1",
@@ -58,9 +59,9 @@
     "lint": "eslint src/*.js",
     "lint:fix": "eslint --fix src/*.js",
     "prepush": "npm run lint",
-    "test": "mocha tests/**/*.spec.js --require babel-register",
+    "test": "mocha tests/**/*.spec.js --require @babel/register",
     "test:coverage": "nyc npm test",
-    "test:tdd": "mocha tests/**/*.spec.js --require babel-register --watch"
+    "test:tdd": "mocha tests/**/*.spec.js --require @babel/register --watch"
   },
   "license": "MIT",
   "nyc": {
